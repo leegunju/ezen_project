@@ -1,0 +1,22 @@
+package com.myweb.www.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@Setter
+public class PagingVO {
+	private int pageNo;
+	private int qty;
+	
+	public PagingVO() {
+		this(1, 10);
+	}
+	
+	public PagingBO(int pageNo, int qty) {
+		this.pageNo = pageNo;
+		this.qty = qty;
+	}
+}

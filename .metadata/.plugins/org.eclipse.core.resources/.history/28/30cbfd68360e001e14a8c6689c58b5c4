@@ -1,0 +1,28 @@
+body {
+	background-image: url(/resources/img/jungle.jpg);
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+#headDiv {
+		background-color: rgb(246,245,239);
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+	}
+
+	#headDiv h3 {
+		margin: 0;
+	}
+
+	#headDiv a {
+		text-decoration: none;
+	}
+
+	#headDiv button {
+		padding: 5px 10px;
+		border: none;
+		background-color: #ccc;
+		cursor: pointer;
+	}

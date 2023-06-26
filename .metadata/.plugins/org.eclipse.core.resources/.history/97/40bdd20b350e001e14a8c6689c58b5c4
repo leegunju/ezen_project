@@ -1,0 +1,7 @@
+body {
+	background-image: url(/resources/img/jungle.jpg);
+	
+	height: 100%;
+	background-size: cover;
+	text-align: center;
+}
