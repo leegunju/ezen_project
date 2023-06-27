@@ -1,0 +1,11 @@
+package com.myweb.www.repository;
+
+import com.myweb.www.domain.CustomerVO;
+
+public interface UserDAO {
+
+	CustomerVO getUser(String cid);
+
+	int join(CustomerVO uvo);
+
+}
