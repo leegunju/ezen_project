@@ -23,22 +23,20 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public int join(CustomerVO cvo) {
 		log.info("회원가입 서비스 진입");
-		CustomerVO tempUser = cdao.getUser(cvo.getCid());
-		if(tempUser != null) {
-			return 0;
-		}
-		if(cvo.getCid() == null || cvo.getCid().length() == 0) {
-			return 0;
-		}
-		if(cvo.getCpw() == null || cvo.getCpw().length() == 0) {
-			return 0;
-		}
-		String cpw = cvo.getCpw();
-		String encodePw = passwordencoder.encode(cpw);
-		cvo.setCpw(encodePw);
 		int isOk = cdao.join(cvo);
 		log.info("isOk : "+isOk);
 		return isOk;
+	}
+
+
+	@Override
+	public CustomerVO login(String cid, String cpw) {
+		log.info(">> 로그인 서비스 진입");
+		CustomerVO user = cdao.getUser(cid);
+		if(user == null) { return null; }
+
+			return user;
+
 	}
 	
 	
