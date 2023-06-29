@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.myweb.www.repository.UserDAO">
+    <insert id="join">
+    insert into user(cid, cname, cpw, cage, cgender, cnick_name, cemail,
+    ctel, cadd, cdate)values(#{cid}, #{cname}, #{cpw}, #{cage}, #{cgender},
+    #{cnick_name}, #{cemail}, #{ctel}, #{cadd}, #{cdate})
+    </insert>
+    <select id="getUser" resultType="com.myweb.www.domain.UserVO">
+    select * from customer where cid = #{cid}
+    </select>
+    </mapper>

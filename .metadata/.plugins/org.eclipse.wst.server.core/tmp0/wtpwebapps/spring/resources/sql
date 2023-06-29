@@ -1,46 +1,14 @@
-2023-06-16
-database name: springtest2
-user: springuser2
-pw: mysql
+2023.06.28 Customer
 
-create table user(
-id varchar(100) not null, 
-pw varchar(100) not null, 
-name varchar(100),
-email varchar(100),
-home varchar(100),
-age int,
-reg_date datetime default now(),
-primary key (id));
-
-2023-06-19
-create table board(
-bno int not null auto_increment,
-title varchar(200),
-content text,
-writer varchar(100),
-reg_date datetime default now(),
-read_count int default 0,
-isDel varchar(50) default "n",
-primary key(bno));
-
-2023-06-20
-create table comment(
-cno int not null auto_increment,
-bno int not null,
-writer varchar(100) not null,
-content text,
-reg_date datetime default now(),
-mod_date datetime default now(),
-primary key(cno));
-
-2023-06-20
-create table file(
-uuid varchar(256) not null,
-save_dir varchar(256) not null,
-file_name varchar(256) not null,
-file_type tinyint(1) default 0,
-bno int,
-file_size int,
-reg_date datetime default now(),
-primary key(uuid));
+create table customer(
+cid varchar(100) not null,
+cname varchar(10) not null,
+cpw varchar(100) not null,
+cage int not null,
+cgender varchar(5) not null,
+cnick_name varchar(10) not null,
+cemail varchar(50) not null,
+ctel int not null,
+cadd varchar(100) not null,
+cdate datetime default now(),
+primary key(cid))

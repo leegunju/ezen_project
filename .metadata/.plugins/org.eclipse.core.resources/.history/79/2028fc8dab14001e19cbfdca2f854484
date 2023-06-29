@@ -1,0 +1,44 @@
+package com.myweb.www.controller;
+
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.myweb.www.domain.UserVO;
+import com.myweb.www.service.UserService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequestMapping("/member/*")
+@Controller
+public class UserController {
+	
+	@Inject
+	private UserService usv;
+	
+	@GetMapping("/join")
+	public String joinGet(Model m) {
+		return "/user/signup";
+	}
+	
+	@PostMapping("/join")
+	public String joinPost(Model m, UserVO uvo) {
+		log.info("회원가입 페이지 진입");
+		int isOk = usv.join(uvo);
+		if(isOk > 0 ) {
+			m.addAttribute("msg_signup", 1);
+		}else {
+			m.addAttribute("msg_signup", 0);
+		}
+		
+		return "home";
+	}
+		
+	
+}

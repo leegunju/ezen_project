@@ -1,0 +1,67 @@
+package com.myweb.www.controller;
+
+
+import javax.inject.Inject;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.myweb.www.domain.CustomerVO;
+import com.myweb.www.service.CustomerService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequestMapping("/member/*")
+@Controller
+public class CustomerController {
+	
+	@Inject
+	private CustomerService csv;
+	
+	@GetMapping("/join")
+	public String joinGet(Model m) {
+		return "/user/signup";
+	}
+	
+	@PostMapping("/join")
+	public String joinPost(Model m, @RequestBody CustomerVO cvo) {
+		log.info("회원가입 페이지 진입");
+		if (isIdDuplicate(cvo.getCid())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Duplicate ID");
+        }
+		int isOk = csv.join(cvo);
+		if(isOk > 0 ) {
+			m.addAttribute("msg_signup", 1);
+		}else {
+			m.addAttribute("msg_signup", 0);
+		}
+		
+		return "home";
+	}
+    @PostMapping("/signup")
+    public ResponseEntity<String> signup(@RequestBody CustomerVO cvo) {
+        // 중복 확인 메서드 호출
+        if (isIdDuplicate(cvo.getCid())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Duplicate ID");
+        }
+
+        // 중복이 아닌 경우 회원 가입 처리
+        // ...
+
+        return ResponseEntity.ok("Signup successful");
+    }
+
+    private boolean isIdDuplicate(String id) {
+        // 중복 확인 로직 구현 (예: UserService에서 DB 조회)
+        return CustomerService.isIdDuplicate(id);
+    }
+		
+	
+}

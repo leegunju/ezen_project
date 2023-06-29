@@ -1,0 +1,13 @@
+create table customer(
+cid varchar(100) not null,
+cname varchar(10) not null,
+cpw varchar(100) not null,
+cage int not null,
+cgender varchar(5) not null,
+cnick_name varchar(10) not null,
+cemail varchar(50) not null,
+ctel int not null,
+cadd varchar(100) not null,
+cdate datetime default now(),
+primary key(cid))
+

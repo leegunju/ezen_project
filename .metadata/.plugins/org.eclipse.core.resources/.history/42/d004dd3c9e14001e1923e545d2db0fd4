@@ -1,0 +1,14 @@
+package com.myweb.www.service;
+
+import com.myweb.www.domain.UserVO;
+
+public class UserServiceImpl implements UserService{
+
+	@Override
+	public int join(UserVO uvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}
