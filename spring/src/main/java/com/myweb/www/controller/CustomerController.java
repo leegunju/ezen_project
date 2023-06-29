@@ -17,7 +17,7 @@ import com.myweb.www.service.CustomerService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping("/member/*")
+@RequestMapping("/user/*")
 @Controller
 public class CustomerController {
 	
@@ -59,6 +59,7 @@ public class CustomerController {
 			ses.setAttribute("ses", isUser);
 			m.addAttribute("user", isUser);
 		}
+//		로그인 계정이 admin일 경우 관리자 페이지 이동
 		if(cid.equals("admin")) {
 			return "/user/admin";
 		}else {			

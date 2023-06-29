@@ -6,16 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Log In Page</title>
+<link rel="stylesheet" href="/resources/css/login.css">
 </head>
 <body>
-<!-- c:if를 넣어서 관리자 계정으로 로그인 시 관리자 화면으로 -->
-	<h1>로그인</h1>
-	<form action="/member/login" method="post">
-		아이디 : <input type="text" name="cid" placeholder="ID">
-		비밀번호 : <input type="password" name="cpw" placeholder="Password">
-		<button type="submit">Log In</button>
-	</form>
-
-
+    <form action="/user/login" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" name="cid" id="exampleFormControlInput1" placeholder=" ">
+            <label for="exampleFormControlInput1" class="form-label">Please Enter your ID</label>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="cpw" id="exampleFormControlInput2" placeholder=" ">
+            <label for="exampleFormControlInput2" class="form-label">Please Enter your PW</label>
+        </div>
+        <button type="submit" class="btn btn-dark">Log In</button>
+    </form>
 </body>
 </html>

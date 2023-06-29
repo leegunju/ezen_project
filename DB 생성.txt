@@ -11,3 +11,8 @@ cadd varchar(100) not null,
 cdate datetime default now(),
 primary key(cid))
 
+create table rentals(
+rno int not null,
+rdate datetime default now(),
+ramount int not null default 1,
+primary key(rno))
