@@ -1,0 +1,22 @@
+package com.myweb.www.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class BoardVO {
+	private long b_bno;
+	private String b_cid;
+	private String b_title;
+	private String b_content;
+	private String b_reg_date;
+	private String b_mod_date;
+	private int b_read_count;
+}

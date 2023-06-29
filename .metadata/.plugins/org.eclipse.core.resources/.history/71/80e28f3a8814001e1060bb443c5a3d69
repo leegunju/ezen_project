@@ -1,0 +1,19 @@
+package com.myweb.www.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Customer {
+	private String cu_cid;
+	private String cu_pw;
+	private String cu_name;
+	private String cu_add;
+}

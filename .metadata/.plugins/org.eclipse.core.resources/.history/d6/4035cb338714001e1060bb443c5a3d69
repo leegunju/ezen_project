@@ -1,0 +1,23 @@
+package com.myweb.www.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Comment {
+	private int c_cno;
+	private long c_bno;
+	private String c_cid;
+	private String c_writer;
+	private String c_content;
+	private String c_reg_date;
+	private String c_mod_date;
+	
+}

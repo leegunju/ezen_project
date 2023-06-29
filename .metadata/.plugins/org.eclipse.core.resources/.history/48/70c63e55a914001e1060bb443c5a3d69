@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상담 신청</title>
+</head>
+<body>
+	<div class="main_container">
+		<section class="contact_page">
+			<h2 class="section_tit">상담신청</h2>
+			<ul class="contact_page_input_con">
+			
+			</ul>
+			<div class="privacy_agree_box"></div>
+			<a href="#" class="contact_page_btn" id="contact_page_btn">상담신청</a>
+		</section>
+	</div>
+</body>
+</html>

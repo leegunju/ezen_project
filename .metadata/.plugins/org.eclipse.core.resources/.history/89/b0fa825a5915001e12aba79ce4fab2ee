@@ -1,0 +1,7 @@
+package com.myweb.www.domain;
+
+public class ConsultVO {
+	private int csno;
+	private String cscontent;
+
+}

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상담 신청</title>
+</head>
+<body>
+	<h2>상담신청</h2>
+	<form action="/consult/register" method="post">
+	제품 : <input type="text" name="title">
+	고객명 : <input type="text" name="writer">
+	연락처 : <input type="text" name="content">
+	<button type="submit">상담신청</button>
+	</form>
+</body>
+</html>
