@@ -5,18 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/register/register.css">
+    <script src="https://kit.fontawesome.com/e927512ef5.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <h1>Product Register Page</h1>
     <form action="/product/register" method="post" enctype="multipart/form-data">
-        
-       <select name="type_a">
-          <option value="">선택</option>
-          <option value="정수기">정수기</option>
-          <option value="공기청정기">공기청정기</option>
-          <option value="제습기">제습기</option>
-          <option value="에어컨">에어컨</option>
-       </select>
+
+        <div>
+            <ul>
+                <li class="product" data-value="정수기">
+                    <div>
+                        <i class="fa-solid fa-glass-water" style="color: #000000;"></i>
+                        <div class="product-name">정수기</div>
+                    </div>
+                </li>
+                <li class="product" data-value="공기청정기">
+                    <div>
+                        <i class="fa-solid fa-fan" style="color: #000000;"></i>
+                        <div class="product-name">공기청정기</div>
+                    </div>
+                </li>
+                <li class="product" data-value="제습기">
+                    <div>
+                        <i class="fa-solid fa-droplet-slash" style="color: #000000;"></i>
+                        <div class="product-name">제습기</div>
+                    </div>
+                </li>
+                <li class="product" data-value="에어컨">
+                    <div>
+                        <i class="fa-solid fa-wind" style="color: #000000;"></i>
+                        <div class="product-name">에어컨</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <input type="hidden" name="type_a" id="mySelection">
        <br>
        <input name="pname" placeholder="제품명을 입력해주세요"> <br>
        <input name="price" placeholder="가격을 입력해주세요"> <br>
@@ -29,7 +54,9 @@
        </div>
        <button id="regBtn" type="submit">Submit</button>
     </form>
+
     <script type="text/javascript" src="/resources/js/productRegister.js"></script>
+    <script src="/js/register.js"></script>
  </body>
  
 </html>
