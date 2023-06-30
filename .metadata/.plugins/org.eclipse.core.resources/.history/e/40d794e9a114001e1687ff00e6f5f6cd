@@ -1,0 +1,23 @@
+package com.myweb.www.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductVO {
+	private int pno; //제품번호, primary key, auto_increment
+	private String pname; // 제품명
+	private String pid; //모델명
+	private int price; // 가격
+	private int sale_price; // 할인 가격
+	private String content; // 제품 정보
+	private int count; // 재고 
+	private String is_there; // count가 0이면 "n"으로 업데이트 n이면 품절표시
+}
