@@ -1,0 +1,14 @@
+2023-06-27
+
+dbname: springproject
+id: springuser
+pw: mysql
+
+create table product(
+pno int auto_increment,
+type_a varchar(100) not null,
+pname varchar(100) not null,
+price int not null,
+content text,
+count int default 0,
+primary key(pno));

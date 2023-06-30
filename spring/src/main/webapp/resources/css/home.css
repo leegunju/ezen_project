@@ -1,12 +1,24 @@
 /* header */
 body{
+<<<<<<< HEAD
     background-color: #F9F9F9;
 }
+=======
+    background-color: white;
+}
+.info, .search{
+    margin-top: 20px;
+}
+
+>>>>>>> jiho
 a{
     text-decoration: none;
 }
 .logo img{
+<<<<<<< HEAD
     margin-top: 20px;
+=======
+>>>>>>> jiho
     width: 250px;
     height: auto;
 }
@@ -45,7 +57,11 @@ a{
 font-weight: normal;
 text-transform: uppercase;
 margin: 0.3125em 0;
+<<<<<<< HEAD
 background-color: #F9F9F9;
+=======
+background-color: white;
+>>>>>>> jiho
 position: relative;
 display: inline-block;
 padding: 0 10px;
@@ -53,7 +69,11 @@ color: black;
 }
 .style-3 {
 font-family: "Oswald", sans-serif;
+<<<<<<< HEAD
 color: #F9F9F9;
+=======
+color: white;
+>>>>>>> jiho
 }
 .style-3:before {
 content: "";
@@ -74,9 +94,12 @@ bottom: 35%;
 left: -100%;
 z-index: -999;
 }
+<<<<<<< HEAD
 .info, .search{
     margin-top: 20px;
 }
+=======
+>>>>>>> jiho
 .info>a{
 color: black;
 top: 0;
@@ -203,6 +226,7 @@ video{
     color: white;
 }
 .video-box-btn>a:hover{
+<<<<<<< HEAD
     color: black;
 }
 /* footer */
@@ -243,3 +267,7 @@ main {
     padding-bottom: 40px;
 }
 /* footer end */
+=======
+    color: blueviolet;
+}
+>>>>>>> jiho

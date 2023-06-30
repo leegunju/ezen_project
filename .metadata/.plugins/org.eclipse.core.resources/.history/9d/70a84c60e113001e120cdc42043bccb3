@@ -28,35 +28,32 @@ public class FileHandler {
 		log.info(">>> date > " + date);
 		String today = date.toString();
 		today = today.replace("-", File.separator);
-		
 		File folders = new File(UP_DIR, today);
 		
 		if(!folders.exists()) {
-			folders.mkdirs(); 
+			folders.mkdirs();
 		}
-
-		List<FileVO> fList = new ArrayList<FileVO>();
+		
+		List<FileVO> flist = new ArrayList<FileVO>();
 		for(MultipartFile file : files) {
 			FileVO fvo = new FileVO();
-			fvo.setSave_dir(today); 
-			fvo.setFile_size(file.getSize()); 
+			fvo.setSave_dir(today);
+			fvo.setFile_size(file.getSize());
 			
-			String originalFileName = file.getOriginalFilename(); 
-			String onlyFileName =  originalFileName.substring(
+			String originalFileName = file.getOriginalFilename();
+			String onlyFileName = originalFileName.substring(
 					originalFileName.lastIndexOf(File.separator)+1);
-			log.info(">>> onlyFileName > " + onlyFileName); 
+			log.info(">>> onlyFileName > " + onlyFileName);
 			fvo.setFile_name(onlyFileName);
 			
 			UUID uuid = UUID.randomUUID();
-			fvo.setUuid(uuid.toString()); 
+			fvo.setUuid(uuid.toString());
+			
 			String fullfileName = uuid.toString()+"_"+onlyFileName;
 			File storeFile = new File(folders, fullfileName);
-			log.info(">>>" + fullfileName);
-			log.info(">>>" + storeFile);
-			log.info(">>>" + file);
 			
 			try {
-				file.transferTo(storeFile); 	
+				file.transferTo(storeFile);
 				if(isImageFile(storeFile)) {
 					fvo.setFile_type(1);
 					File thumbNail = new File(folders, uuid.toString()+"_th_"+onlyFileName);
@@ -66,13 +63,12 @@ public class FileHandler {
 				log.info(">>> file 생성 오류 > ");
 				e.printStackTrace();
 			}
-			fList.add(fvo);
+			flist.add(fvo);
 		}
-		return fList;
+		return flist;
 	}
 	private boolean isImageFile(File storeFile) throws IOException {
 		String mimeType = new Tika().detect(storeFile);
 		return mimeType.startsWith("image")? true : false;
-		
 	}
 }
