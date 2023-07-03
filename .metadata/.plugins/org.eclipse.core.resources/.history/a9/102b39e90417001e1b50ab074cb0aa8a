@@ -1,0 +1,16 @@
+package com.myweb.www.repository;
+
+import com.myweb.www.domain.CustomerDTO;
+import com.myweb.www.domain.CustomerVO;
+
+public interface CustomerDAO {
+
+	CustomerVO getUser(CustomerDTO cdto);
+
+	int join(CustomerVO uvo);
+
+	int modify(CustomerVO cvo);
+
+	int delete(CustomerVO cvo);
+
+}

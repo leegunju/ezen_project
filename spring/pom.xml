@@ -33,10 +33,6 @@
          <version>${org.springframework-version}</version>
       </dependency>
             
-<<<<<<< HEAD
-=======
-            
->>>>>>> jiho
       <!-- AspectJ -->
       <dependency>
          <groupId>org.aspectj</groupId>
@@ -224,12 +220,6 @@
           <type>pom</type>
       </dependency>
       
-<<<<<<< HEAD
-      
-      
-      
-=======
->>>>>>> jiho
            
    </dependencies>
     <build>

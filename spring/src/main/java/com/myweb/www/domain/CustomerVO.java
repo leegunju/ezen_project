@@ -20,7 +20,7 @@ public class CustomerVO {
 	private String cgender;
 	private String cnick_name;
 	private String cemail;
-	private int ctel;
+	private String ctel;
 	private String cadd;
 	private String cdate;
 }

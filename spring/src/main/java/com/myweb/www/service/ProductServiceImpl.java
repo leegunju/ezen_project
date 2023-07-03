@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.myweb.www.domain.FileVO;
 import com.myweb.www.domain.ProductDTO;
 import com.myweb.www.domain.ProductVO;
+import com.myweb.www.domain.RentalsVO;
 import com.myweb.www.repository.FileDAO;
 import com.myweb.www.repository.ProductDAO;
 

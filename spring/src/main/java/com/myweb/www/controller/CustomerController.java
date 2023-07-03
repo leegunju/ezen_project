@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.myweb.www.domain.AdminVO;
 import com.myweb.www.domain.CustomerVO;
 import com.myweb.www.service.CustomerService;
 
@@ -50,24 +51,47 @@ public class CustomerController {
 	
 	@PostMapping("/login")
 	public String loginPost(Model m, String cid, String cpw, HttpServletRequest request) {
-		log.info(">>>id : "+cid+", "+"pw : "+cpw);
+		
 		CustomerVO isUser = csv.login(cid, cpw); 
-		log.info(">>>isUser "+isUser.toString());
-
+		log.info(">>>id : "+cid+", "+"pw : "+cpw);
+		AdminVO admin = new AdminVO();
 		if(isUser != null) {
 			HttpSession ses = request.getSession();
 			ses.setAttribute("ses", isUser);
 			m.addAttribute("user", isUser);
 		}
 //		로그인 계정이 admin일 경우 관리자 페이지 이동
-		if(cid.equals("admin")) {
-			return "/user/admin";
+		if(admin.getAid().equals(cid) ) {
+			return "/product/register";
 		}else {			
 			return "home";
 		}
 	}
-
-
+	
+	@GetMapping("/modify")
+	public String modifyGet() {
+		return "/user/modify";
+	}
+	
+	@PostMapping("/modify")
+	public String modifyPost(Model m, CustomerVO cvo) {
+		log.info("회원 정보 수정 진입");
 		
+		int isUser = csv.modify(cvo);
+		
+		return "home";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteGet() {
+		return "/user/delete";
+	}
+	
+	@PostMapping("/delete")
+	public String deletePost(CustomerVO cvo) {
+		log.info("회원 정보 삭제 진입");
+		int isOk = csv.delete(cvo);
+		return "home";
+	}
 	
 }

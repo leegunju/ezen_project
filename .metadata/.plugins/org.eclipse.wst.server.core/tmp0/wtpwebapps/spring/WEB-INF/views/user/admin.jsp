@@ -8,12 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<<< HEAD:.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/spring/WEB-INF/views/user/admin.jsp
+<<<<<<<< HEAD:spring/src/main/webapp/WEB-INF/views/user/admin.jsp
 	<h1>관리자 화면</h1>
 ========
-	<c:forEach items="${list }" var="bvo">
-	
-	</c:forEach>
->>>>>>>> jiho:.metadata/.plugins/org.eclipse.core.resources/.history/3c/f0f6ad018814001e1687ff00e6f5f6cd
+	<c:set var="product" value="${ProductDTO.pvo }"></c:set>
+>>>>>>>> jiho:.metadata/.plugins/org.eclipse.core.resources/.history/f0/c0e5b6903416001e126fb0896bf42604
 </body>
 </html>

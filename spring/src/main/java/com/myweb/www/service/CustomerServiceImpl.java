@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.myweb.www.domain.AdminVO;
 import com.myweb.www.domain.CustomerVO;
 import com.myweb.www.repository.CustomerDAO;
 
@@ -32,11 +33,30 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public CustomerVO login(String cid, String cpw) {
 		log.info(">> 로그인 서비스 진입");
-		CustomerVO user = cdao.getUser(cid);
-		if(user == null) { return null; }
+		CustomerVO user = cdao.getUser(cid, cpw);
+		if(user == null){ 
+			log.info("로그인 실패");
+			return null; }
 
 			return user;
 
+	}
+
+
+	@Override
+	public int modify(CustomerVO cvo) {
+		log.info(">> 회원 정보 수정 서비스 진입");
+		int isOk = cdao.modify(cvo);
+		return isOk;
+	}
+
+
+	@Override
+	public int delete(CustomerVO cvo) {
+		log.info(">> 회원 정보 삭제 서비스 진입");
+		int isOk = cdao.delete(cvo);
+		log.info("isOk : "+isOk);
+		return isOk;
 	}
 	
 	
