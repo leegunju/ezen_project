@@ -31,9 +31,9 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public CustomerVO login(String cid, String cpw) {
+	public CustomerVO login(CustomerVO cvo) {
 		log.info(">> 로그인 서비스 진입");
-		CustomerVO user = cdao.getUser(cid, cpw);
+		CustomerVO user = cdao.getUser(cvo);
 		if(user == null){ 
 			log.info("로그인 실패");
 			return null; }
@@ -57,6 +57,17 @@ public class CustomerServiceImpl implements CustomerService{
 		int isOk = cdao.delete(cvo);
 		log.info("isOk : "+isOk);
 		return isOk;
+	}
+
+
+	@Override
+	public AdminVO getAdmin() {
+		log.info(">> 관리자 정보 가져오기");
+		AdminVO admin = cdao.getAdmin();
+		if(admin == null){ 
+			log.info("로그인 실패");
+			return null; }
+		return admin;
 	}
 	
 	

@@ -1,10 +1,11 @@
 package com.myweb.www.repository;
 
+import com.myweb.www.domain.AdminVO;
 import com.myweb.www.domain.CustomerVO;
 
 public interface CustomerDAO {
 
-	CustomerVO getUser(String cid, String cpw);
+	CustomerVO getUser(CustomerVO cvo);
 
 	int join(CustomerVO uvo);
 
@@ -12,6 +13,6 @@ public interface CustomerDAO {
 
 	int delete(CustomerVO cvo);
 
-	CustomerVO getAdmin(String cid, String cpw);
+	AdminVO getAdmin();
 
 }

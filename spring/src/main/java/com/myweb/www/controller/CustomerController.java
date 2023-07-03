@@ -5,11 +5,13 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myweb.www.domain.AdminVO;
 import com.myweb.www.domain.CustomerVO;
@@ -49,19 +51,17 @@ public class CustomerController {
 		return "/user/login";
 	}
 	
-	@PostMapping("/login")
-	public String loginPost(Model m, String cid, String cpw, HttpServletRequest request) {
-		
-		CustomerVO isUser = csv.login(cid, cpw); 
-		log.info(">>>id : "+cid+", "+"pw : "+cpw);
-		AdminVO admin = new AdminVO();
+	@PostMapping("/login")		
+	public String loginPost(Model m, CustomerVO cvo, HttpServletRequest request) {		
+		CustomerVO isUser = csv.login(cvo); 
+		AdminVO isAdmin = csv.getAdmin();
 		if(isUser != null) {
 			HttpSession ses = request.getSession();
 			ses.setAttribute("ses", isUser);
 			m.addAttribute("user", isUser);
 		}
 //		로그인 계정이 admin일 경우 관리자 페이지 이동
-		if(admin.getAid().equals(cid) ) {
+		if(isAdmin.getAid().equals(cvo.getCid()) ) {
 			return "/product/register";
 		}else {			
 			return "home";

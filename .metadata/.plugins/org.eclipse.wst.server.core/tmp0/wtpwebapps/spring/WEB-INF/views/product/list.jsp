@@ -7,19 +7,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Product List</title>
+<link rel="stylesheet" href="/resources/css/list.css">
 </head>
 <body>
-<div>
-	<c:forEach items="${dtoList}" var="dto">
-   		<c:forEach items="${dto.flist}" var="file">
-   			<img alt="image" src="/upload/${fn:replace(file.save_dir, '\\','/') }/${file.uuid}_th_${file.file_name}"><br>
-		</c:forEach>
-		<p>${dto.pvo.pname}</p>
-		<p>${dto.pvo.price}</p>
-		<p>${dto.pvo.content}</p>
-	</c:forEach>
-</div>  	
-       
-   
+<c:set var="firstDto" value="${dtoList[0]}" />
+<h1>${firstDto.pvo.type_a} List</h1>
+<div id="dtoListDiv">
+    <c:forEach items="${dtoList}" var="dto">
+        <div>
+        <c:forEach items="${dto.flist}" var="file">
+            <img alt="image" src="/upload/${fn:replace(file.save_dir, '\\','/') }/${file.uuid}_th_${file.file_name}"><br>
+        </c:forEach>
+        <p>${dto.pvo.pname}</p>
+        <p>${dto.pvo.price}</p>
+        <p>${dto.pvo.content}</p>
+        </div>
+    </c:forEach>
+</div>       
+
 </body>
 </html>

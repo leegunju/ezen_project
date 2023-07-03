@@ -11,11 +11,11 @@
     </insert>
     
     <select id="getUser" resultType="com.myweb.www.domain.CustomerVO">
-    select * from customer where cid = #{cid}
+    select * from customer where cid = #{cid} and cpw = #{cpw}
     </select>
     
     <select id="getAdmin" resultType="com.myweb.www.domain.AdminVO">
-    select * from admin where aid = #{aid}
+    select * from admin
     </select>
     
     <update id="modify">
