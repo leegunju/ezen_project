@@ -19,9 +19,9 @@
     </select>
     
     <update id="modify">
-    update customer set cname = #{cname}, cage = #{cage},
-    cnick_name = #{cnick_name}, cemail = #{cemail}, ctel = #{ctel}, 
-    cadd = #{cadd} where cid = #{cid}
+    update customer set cid = #{cid}, cpw = #{cpw}, cname = #{cname}, 
+    cage = #{cage}, cnick_name = #{cnick_name}, cemail = #{cemail}, 
+    ctel = #{ctel}, cadd = #{cadd} where cid = #{cid}
     </update>
     
     <delete id="delete">
