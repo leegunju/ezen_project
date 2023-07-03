@@ -1,8 +1,0 @@
-package com.myweb.www.domain;
-
-public class RentalsVO {
-	
-	private int rno;
-	private String rdate;
-	private int ramount;
-}

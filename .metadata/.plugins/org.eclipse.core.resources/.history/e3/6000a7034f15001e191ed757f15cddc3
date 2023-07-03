@@ -1,9 +1,0 @@
-package com.myweb.www.service;
-
-import com.myweb.www.domain.ProductVO;
-
-public interface ProductService {
-
-	int register(ProductVO pvo);
-
-}

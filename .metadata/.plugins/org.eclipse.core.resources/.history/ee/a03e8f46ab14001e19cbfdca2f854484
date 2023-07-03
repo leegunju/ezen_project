@@ -1,9 +1,0 @@
-package com.myweb.www.service;
-
-import com.myweb.www.domain.CustomerVO;
-
-public interface UserService {
-
-	int join(CustomerVO uvo);
-
-}

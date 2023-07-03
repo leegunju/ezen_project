@@ -1,6 +1,0 @@
-package com.myweb.www.domain;
-
-public class FileDTO {
-	private ProductVO pvo;
-	private List<FileVO> fList;
-}

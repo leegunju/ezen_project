@@ -1,7 +1,0 @@
-package com.myweb.www.domain;
-
-public class CustomerDTO {
-	
-	private CustomerVO cvo;
-	private AdminVO avo;
-}

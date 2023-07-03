@@ -1,9 +1,0 @@
-package com.myweb.www.repository;
-
-<<<<<<<< HEAD:.metadata/.plugins/org.eclipse.core.resources/.history/86/506f68f49d14001e1923e545d2db0fd4
-public interface UserService {
-========
-public interface ProductDAO {
->>>>>>>> jiho:.metadata/.plugins/org.eclipse.core.resources/.history/9e/90903cb2af14001e1be983e1f6b30c64
-
-}

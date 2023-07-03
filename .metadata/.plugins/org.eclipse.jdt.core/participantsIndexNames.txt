@@ -1,7 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\EZENIC-166\Desktop\HyeongRae\ezen_project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1076564954.index
-\spring\src\main\java
-C:\Users\EZENIC-166\Desktop\HyeongRae\ezen_project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1596345803.index
-\spring\src\main\java
-C:\Users\EZENIC-166\Desktop\HyeongRae\ezen_project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1632566881.index
-\spring\src\main\java
